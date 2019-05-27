@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+        <div><label for="yearBirtday">Votre année de naissance : </label><input type="text" id="yearBirthday" name="yearBirthday"  onkeyup="bissextile()" /></div>
+    <script>
+        function bissextile() {
+            var yearBirthday = document.getElementById('yearBirthday').value;
+            console.log(yearBirthday);
+            console.log(yearBirthday % 4 );
+            console.log(yearBirthday % 100);
+            console.log(yearBirthday % 400);
+            if ((yearBirthday % 4 == 0) && ((yearBirthday % 100 != 0) || (yearBirthday % 400 == 0))) {
+                document.body.style.backgroundColor = 'green';
+            } else {
+                document.body.style.backgroundColor = 'red';
+            }
+        }
+    </script>
+</body>
+</html>

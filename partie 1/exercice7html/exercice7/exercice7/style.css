@@ -1,0 +1,47 @@
+﻿div {
+    height: 50px;
+    float: left;
+}
+#green {
+    width: 75%;
+    background-color: #2ECC71;
+}
+#lightBlue {
+    width: 25%;
+    background-color: #2980B9;
+}
+#red {
+    height:150px;
+    width: 30%;
+    background-color: #E74C3C;
+}
+#darkOrange {
+    height: 75px;
+    width: 35%;
+    background-color: #E67E22;
+}
+#gray {
+    height: 75px;
+    width: 35%;
+    background-color: #95A5A6;
+}
+#yellow {
+    height: 75px;
+    width: 23.33%;
+    background-color: #F39C12;
+}
+#turquoise {
+    height: 75px;
+    width: 23.33%;
+    background-color: #16A085;
+}
+#lightOrange {
+    height: 75px;
+    width: 23.33%;
+    background-color: #D35400;
+}
+#darkBlue {
+    height: 250px;
+    width: 100%;
+    background-color: #2C3E50;
+}

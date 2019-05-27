@@ -1,0 +1,10 @@
+﻿* {
+    font-family: 'Acme', sans-serif;
+}
+#textVictory{
+    font-weight: bold;
+}
+#numberTry{
+    font-size: small;
+    font-style: italic;
+}

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Exercice_5</title>
+    <meta charset="UTF-8" />
+</head>
+<body>
+    <form>
+        <div><label for="firstNumber">Premier nombre : </label><input type="text" id="firstNumber" name="firstNumber" /></div>
+        <div><label for="secondNumber">Deuxième nombre : </label><input type="text" id="secondNumber" name="secondNumber" /></div>
+        <div><input type="submit" name="submit" id="submit" value="valider" onclick="divise()" /></div>
+    </form>
+    <script>
+        // Création de la fonction divise
+        function divise() {
+            // Déclaration des variables
+            var result = 0;
+            // Récuperer la valeur de input firstNumber
+            var number1 = document.getElementById("firstNumber").value;
+            // Récuperer la valeur de input secondNumber
+            var number2 = document.getElementById("secondNumber").value;
+            // Vérification si il s'agit bien d'un nombre
+            if (isNaN(number1) && isNaN(number2)) {
+                number1 = Math.trunc(number1);
+                // Multiplication des variables
+                result = number1 * number2;
+                //Affichage
+                alert("Votre résultat de " + number1 + " multiplier par " + number2 + " est : " + result);
+            } else {
+                alert("Une erreur s'est produite, veuillez réessayer");
+            }
+        };
+    </script>
+</body>
+</html>

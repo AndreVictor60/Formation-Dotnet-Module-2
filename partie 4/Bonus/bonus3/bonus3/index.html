@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Bonus 3</title>
+    <link href="Content/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <table class="caseLarger"></table>
+        <p id="score"></p>
+    </div>
+    <div>
+        <ol start="0">
+            <li id="indice0">Le framework qui s'appuie sur le découpage d'un projet en boîtes de temps, nommées « sprints ».</li>
+            <li id="indice1">Un composant présent dans de nombreux dispositifs électroniques ?</li>
+            <li id="indice2">Comment s'ecrit C# ?</li>
+            <li id="indice3">Une collection d'outils utiles à la création du design de sites et d'applications web.</li>
+            <li id="indice4">Une fonction qui retourne la valeur d'un nombre arrondi à l'entier le plus proche.</li>
+            <li id="indice5">L'inverse de la balise &lsaquo;ul&rsaquo; ? C'est une liste ...</li>
+            <li id="indice6">L'élément HTML qui permet de représenter un .... de données</li>
+            <li id="indice7">Ensemble des moyens d'acquisition et de restitution, de traitement et de stockage des données dédié au traitement des informations.</li>
+            <li id="indice8">Quelle est l'acronyme d'asynchronous JavaScript and XML : JavaScript et XML asynchrones ?</li>
+            <li id="indice9">Comment appelle-t-on extensible Markup Language ?</li>
+            <li id="indice10">Un ...... de programmation est une notation conventionnelle destinée à formuler des algorithmes et produire des programmes informatiques qui les appliquent..</li>
+        </ol>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var score = 0;
+            // Id des inputs a affiché
+            var caseDisplay = ['#11', '#12', '#13', '#14', '#15', '#16',
+                '#22', '#26', '#29',
+                '#32', '#36', '#37', '#38', '#39', '#310', '#311', '#312', '#315',
+                '#42', '#46', '#49', '#415',
+                '#52', '#56', '#59', '#510', '#511', '#512', '#513', '#514', '#515',
+                '#66', '#69', '#615',
+                '#76', '#77', '#78', '#79', '#710', '#711','#712', '#715',
+                '#86', '#89',
+                '#96', '#99', '#910', '#911', '#912',
+                '#106', '#109', '#1012',
+                '#1112', '#1113', '#1114', '#1115', '#1116', '#1117', '#1118'];
+            // id des inputs pour posséderont l'indice
+            var indice = ['#02', '#06', '#10', '#19', '#215', '#35', '#58', '#75', '#98', '#812', '#1111'];
+            // Fonction create qui permet de créer la grille de mot 
+            function create() {
+                for (var o = 0; o <= 16; o++) {
+                    $('.caseLarger').append('<tr class="ligne' + o + '">');
+                    for (var i = 0; i <= 19; i++) {
+                        $('.ligne' + o).append('<td class="case" id="' + o + i + '"><input hidden class="inputLetter" id="' + o + i + 'Letter" type="text" name="letter" maxlength="1" /></td>');
+                    }
+                    $('.caseLarger').append('</tr>');
+                }
+            }
+            create();
+            // Parcours le tableau caseDisplay afin d'afficher les cases qui seront utiliser lors du mot croisé
+            $.each(caseDisplay, function (index, value) {
+                $(value).addClass('casea');
+                $(value + 'Letter').show();
+            });
+            // Parcours le tableau indice afin de les afficher
+            $.each(indice, function (index, value) {
+                $(value).text(index);
+                $(value).addClass('text-center');
+            });
+            // Fonction checkFlat qui permet de vérifier les mots en horizontale ( word : mot prédéfini, numberStart : id de l'input de départ, nbLane : le numéro de la ligne)
+            function checkFlat(word, numberStart, nbLane) {
+                // Définie la taille du mot
+                var taille = word.length;
+                var position = 0;
+                var letter = '';
+                 //Pour la postion est égal id de l'input de départ
+                 //Tant que la postion n'est pas inférieur a la longueur du mot + la postion de input de départ
+                 //Ajouter 1 a la postion
+                for (position = numberStart; position <= taille + numberStart; position++) {
+                    letter += $('#' + nbLane + position + 'Letter').val();
+                }
+                // Si le mot attendu est égal au mot prédéfini, on bloque les inputs du mot et retourne vrai sinon faux
+                if (word == letter.toLowerCase()) {
+                    for (position = numberStart; position <= taille + numberStart; position++) {
+                        $('#'+ nbLane + position + 'Letter').attr('disabled', 'disabled');
+                    }
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            // Fonction checkUpright qui permet de vérifie les mots en verticale ( word : mot prédéfini, numberStart : id de l'input de départ, nbLane : le numéro de la ligne)
+            function checkUpright(word, numberStart, nbLane) {
+                var taille = word.length;
+                var position = 0;
+                var letter = '';
+                for (position = numberStart; position <= taille + numberStart; position++) {
+                    letter += $('#' + position + nbLane + 'Letter').val();
+                }
+                if (word == letter.toLowerCase()) {
+                    for (position = numberStart; position <= taille + numberStart; position++) {
+                        $('#' + position + nbLane + 'Letter').attr('disabled', 'disabled');
+                    }
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            function win() {
+                if (score == 11) {
+                    $('#score').text('Victoire');
+                }
+            };
+            // Effectuer les tests pour check si le mot est celui attendu
+            // 0 : scrum
+            $('#52').keyup(function () {
+                checkUpright('scrum', 1, 2);
+                if (checkUpright('scrum', 1, 2) == true) {
+                    $('#indice0').css('text-decoration', 'line-through');
+                    score++;
+                    win();
+                }
+            });
+            // 1 : processeur
+            $('#106').keyup(function () {
+                checkUpright('processeur', 1, 6);
+                if (checkUpright('processeur', 1, 6) == true) {
+                    $('#indice1').css('text-decoration', 'line-through');
+                    score++;
+                    win();
+                }
+            });
+            // 2 : csharp
+            $('#16').keyup(function () {
+                checkFlat('csharp', 1, 1);
+                if (checkFlat('csharp', 1, 1) == true) {
+                    $('#indice2').css('text-decoration', 'line-through');
+                    score++;
+                    win();
+                }
+            });
+            // 3 : bootstrap
+            $('#109').keyup(function () {
+                checkUpright('bootstrap', 2, 9);
+                if (checkUpright('bootstrap', 2, 9) == true) {
+                    $('#indice3').css('text-decoration', 'line-through');
+                    score++;
+                    win();
+                }
+            });
+            // 4 : round
+            $('#715').keyup(function () {
+                checkUpright('round', 3, 15);
+                if (checkUpright('round', 3, 15) == true) {
+                    $('#indice4').css('text-decoration', 'line-through');
+                    score++;
+                    win();
+                }
+            });
+            // 5 : ordonne
+            $('#312').keyup(function () {
+                checkFlat('ordonne', 6, 3);
+                if (checkFlat('ordonne', 6, 3) == true) {
+                    $('#indice5').css('text-decoration', 'line-through');
+                    score++;
+                    win();
+                }
+            });
+            // 6 : tableau
+            $('#515,#514').keyup(function () {
+                checkFlat('tableau', 9, 5);
+                if (checkFlat('tableau', 9, 5) == true) {
+                    $('#indice6').css('text-decoration', 'line-through');
+                    score++;
+                    win();
+                }
+            });
+            // 7 : systeme
+            $('#712').keyup(function () {
+                checkFlat('systeme', 6, 7);
+                if (checkFlat('systeme', 6, 7) == true) {
+                    $('#indice7').css('text-decoration', 'line-through');
+                    score++;
+                    win();
+                }
+            });
+            // 8 : ajax
+            $('#912,#911').keyup(function () {
+                checkFlat('ajax', 9, 9);
+                if (checkFlat('ajax', 9, 9) == true) {
+                    $('#indice8').css('text-decoration', 'line-through');
+                    score++;
+                    win();
+                }
+            });
+            // 9 : XML
+            $('#1112,#1012').keyup(function () {
+                checkUpright('xml', 9, 12);
+                if (checkUpright('xml', 9, 12) == true) {
+                    $('#indice9').css('text-decoration', 'line-through');
+                    score++;
+                    win();
+                }
+            });
+            // 10 : langage
+            $('#1118').keyup(function () {
+                checkFlat('langage', 12, 11);
+                if (checkFlat('langage', 12, 11) == true) {
+                    $('#indice10').css('text-decoration', 'line-through');
+                    score++;
+                    win();
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>

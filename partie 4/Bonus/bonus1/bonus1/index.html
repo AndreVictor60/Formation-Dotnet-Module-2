@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Bonus 1</title>
+    <link href="Content/style.css" rel="stylesheet" />
+</head>
+<!--
+    BONUS:
+Construisez une page html avec un carré et un champ de saisie de texte dans un formulaire.
+Lorsque l'on appuie sur une touche de direction le carré se déplace de 10 px dans la bonne direction.
+Quand le bloc atteint un bord de la page, il doit réapparaître de l'autre côté.
+-->
+<body>
+    <div>
+        <input type="text" name="controller" id="controller" />
+    </div>
+    <div id="carre"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // La fonction est déclenché lorsqu'une touche est enfoncée.
+            $("#controller").keydown(function (e) {
+                // Récuperer la taille et largueur de ecran 
+                var widthWindow = $(window).width();
+                var heightWindow = $(window).height();
+                // Récuperer la postion de la div
+                var position = $("#carre").offset();
+                switch (e.keyCode) {
+                    case 39: // gauche
+                        // Ajout de 10px de margin left a la div
+                        $('#carre').css('margin-left', '+=10px');
+                        break;
+                    case 37: // droite
+                        // Ajout de 10px de margin left a la div
+                        $('#carre').css('margin-left', '-=10px');
+                        break;
+                    case 38: // haut
+                        // Ajout de 10px de margin left a la div
+                        $('#carre').css('margin-top', '-=10px');
+                        break;
+                    case 40: // bas
+                        // Ajout de 10px de margin left a la div
+                        $('#carre').css('margin-top', '+=10px');
+                        break;
+                }
+                // Si la positon de la div est supérieur a la largeur de ecran
+                if (position.left >= widthWindow - 50) {
+                    // Margin left repasser a 0
+                    $('#carre').css('margin-left', '0px');
+                }
+                // Si la positon de la div est inférieur a la largeur de ecran
+                if (position.left <= 0) {
+                    // Margin left passer a largeur de ecran - 105 px
+                    $('#carre').css('margin-left', widthWindow - 105);
+                }
+                // Si la positon de la div est inférieur a la largeur de ecran
+                if (position.top <= 10) {
+                    // Margin left passer a 400
+                    $('#carre').css('margin-top','400px');
+                }
+                // Si la positon de la div est supérieur a la hauteur de ecran
+                if (position.top >= 450) {
+                    // Margin top repasser a 10
+                    $('#carre').css('margin-top', '10px');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+    <title>Exercice 6</title>
+</head>
+<body>
+    <form>
+        <fieldset class="identity">
+            <legend class=" identity">Votre identité :</legend>
+            <ol>
+                <li><label for="lastName">Nom :</label><input type="text" id="lastName" name="lastName" placeholder="Nom" /></li>
+                <li><label for="firstName">Prénom :</label><input type="text" id="firstName" name="firstName" placeholder="Prénom" /></li>
+                <li><label for="mail">Adresse mail :</label><input type="email" id="mail" name="mail" placeholder="Adresse mail" /></li>
+            </ol>
+        </fieldset>
+        <fieldset class="delivery">
+            <legend class="delivery">Adresse de livraison :</legend>
+            <ol>
+                <li><label for="address">Adresse :</label><textarea></textarea></li>
+                <li><label for="zip">Code postal :</label><input type="text" id="zip" name="zip" placeholder="Code postal" /></li>
+                <li><label for="city">Ville :</label><input type="text" id="city" name="city" placeholder="Ville"/></li>
+            </ol>
+        </fieldset>
+        <fieldset class="regulations">
+            <legend class="regulations">Informations de réglement :</legend>
+            <ol>
+                <li>Type de carte bancaire :</li>
+                <ol>
+                    <li><input type="radio" name="card" placeholder="VISA"><label for="Visa">VISA</label></li>
+                    <li><input type="radio" name="card" placeholder="Mastercard"><label for="Mastercard">Mastercard</label></li>
+                </ol>
+                <li><label for="numberCard">Numéro de carte :</label><input type="text" id="numberCard" name="numberCard" placeholder="Numéro de carte" /></li>
+                <li><label for="securityKey">Code de sécurite :</label><input type="text" id="securityKey" name="securityKey" placeholder="Code de sécurite"/></li>
+                <li><label for="nameOwner">Nom du titulaire :</label><input type="text" id="nameOwner" name="nameOwner" placeholder="Nom du titulaire" /></li>
+            </ol>
+        </fieldset>
+        <button>J'achète !</button>
+    </form>
+</body>
+</html>

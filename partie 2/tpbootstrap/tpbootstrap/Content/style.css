@@ -1,0 +1,435 @@
+﻿
+#profil {
+    background-image: url('https://www.paspeurdhadopi.fr/wp-content/uploads/2016/08/codage-informatique.jpg');
+    padding: 10px;
+    background-position: 35% 35%;
+}
+
+#jumbotron-background {
+    background-color: transparent;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+#aboutUs {
+    background-image: linear-gradient(bottom,#1C202B, black);
+    background-color: #1C202B;
+    background: linear-gradient(#142630, #1C202B);
+    padding: 50px;
+}
+
+    #aboutUs img {
+        width: 200px;
+        height: 180px;
+    }
+
+.color-red {
+    color: #FF2B42;
+}
+
+.section-title {
+    color: #3a4970;
+    font-weight: bold;
+    font-family: 'Sintony', cursive;
+    padding: 25px;
+}
+
+.about-text {
+    color: white;
+    margin-top: 10px;
+}
+
+.contact {
+    margin-top: 30px;
+}
+
+i {
+    color: rgb(134,143,143);
+}
+
+#career {
+    background-color: #00BDBD;
+}
+
+#skill {
+    background-color: #1C202B;
+}
+
+#contact {
+    background-color: #00BDBD;
+}
+
+
+.progress {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    background: none;
+    margin: 0 auto;
+    box-shadow: none;
+    position: relative;
+}
+
+    .progress:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 7px solid #eee;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .progress > span {
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+    }
+
+    .progress .progress-left {
+        left: 0;
+    }
+
+    .progress .progress-bar {
+        width: 100%;
+        height: 100%;
+        background: none;
+        border-width: 7px;
+        border-style: solid;
+        position: absolute;
+        top: 0;
+    }
+
+.progress-bar-langages {
+    border-color: deeppink;
+}
+
+.progress-bar-framework {
+    border-color: #1B7EE4;
+}
+.progress-bar-outils {
+    border-color: #A5DA26;
+}
+.progress-bar-other {
+    border-color: #DB8918;
+}
+.progress .progress-left .progress-bar {
+    left: 100%;
+    border-top-right-radius: 75px;
+    border-bottom-right-radius: 75px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+}
+
+.progress .progress-right {
+    right: 0;
+}
+
+    .progress .progress-right .progress-bar {
+        left: -100%;
+        border-top-left-radius: 75px;
+        border-bottom-left-radius: 75px;
+        border-right: 0;
+        -webkit-transform-origin: center right;
+        transform-origin: center right;
+    }
+
+.progress .progress-value {
+    display: flex;
+    border-radius: 50%;
+    font-size: 36px;
+    text-align: center;
+    line-height: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-weight: 300;
+    margin-left: 40px;
+}
+
+    .progress .progress-value div {
+        margin-top: 10px;
+    }
+
+    .progress .progress-value span {
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+/* This for loop creates the 	necessary css animation names 
+ Due to the split circle of progress-left and progress right, we must use the animations on each side. 
+ */
+.progress[data-percentage="10"] .progress-right .progress-bar {
+    animation: loading-1 1.5s linear forwards;
+}
+
+.progress[data-percentage="10"] .progress-left .progress-bar {
+    animation: 0;
+}
+
+.progress[data-percentage="20"] .progress-right .progress-bar {
+    animation: loading-2 1.5s linear forwards;
+}
+
+.progress[data-percentage="20"] .progress-left .progress-bar {
+    animation: 0;
+}
+
+.progress[data-percentage="30"] .progress-right .progress-bar {
+    animation: loading-3 1.5s linear forwards;
+}
+
+.progress[data-percentage="30"] .progress-left .progress-bar {
+    animation: 0;
+}
+
+.progress[data-percentage="40"] .progress-right .progress-bar {
+    animation: loading-4 1.5s linear forwards;
+}
+
+.progress[data-percentage="40"] .progress-left .progress-bar {
+    animation: 0;
+}
+
+.progress[data-percentage="50"] .progress-right .progress-bar {
+    animation: loading-5 1.5s linear forwards;
+}
+
+.progress[data-percentage="50"] .progress-left .progress-bar {
+    animation: 0;
+}
+
+.progress[data-percentage="60"] .progress-right .progress-bar {
+    animation: loading-5 1.5s linear forwards;
+}
+
+.progress[data-percentage="60"] .progress-left .progress-bar {
+    animation: loading-1 1.5s linear forwards 1.5s;
+}
+
+.progress[data-percentage="70"] .progress-right .progress-bar {
+    animation: loading-5 1.5s linear forwards;
+}
+
+.progress[data-percentage="70"] .progress-left .progress-bar {
+    animation: loading-2 1.5s linear forwards 1.5s;
+}
+
+.progress[data-percentage="80"] .progress-right .progress-bar {
+    animation: loading-5 1.5s linear forwards;
+}
+
+.progress[data-percentage="80"] .progress-left .progress-bar {
+    animation: loading-3 1.5s linear forwards 1.5s;
+}
+
+.progress[data-percentage="90"] .progress-right .progress-bar {
+    animation: loading-5 1.5s linear forwards;
+}
+
+.progress[data-percentage="90"] .progress-left .progress-bar {
+    animation: loading-4 1.5s linear forwards 1.5s;
+}
+
+.progress[data-percentage="100"] .progress-right .progress-bar {
+    animation: loading-5 1.5s linear forwards;
+}
+
+.progress[data-percentage="100"] .progress-left .progress-bar {
+    animation: loading-5 1.5s linear forwards 1.5s;
+}
+
+@keyframes loading-1 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(36);
+        transform: rotate(36deg);
+    }
+}
+
+@keyframes loading-2 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(72);
+        transform: rotate(72deg);
+    }
+}
+
+@keyframes loading-3 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(108);
+        transform: rotate(108deg);
+    }
+}
+
+@keyframes loading-4 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(144);
+        transform: rotate(144deg);
+    }
+}
+
+@keyframes loading-5 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(180);
+        transform: rotate(180deg);
+    }
+}
+
+.progress {
+    margin-bottom: 1em;
+}
+
+nav.slide-effect a {
+    vertical-align: middle;
+}
+
+.l-skills-pink {
+    left: 240px;
+    top: 60px;
+}
+
+.l-skills-blue {
+    left: 90px;
+    top: 30px;
+}
+
+.l-skills-green {
+    left: 140px;
+    top: 160px;
+}
+/* --------- Skills Buttons Hover ----*/
+.btn-skills {
+    position: relative;
+    width: 150px;
+    display: inline-block;
+    margin: 15px 25px;
+    outline: none;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 300;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+    font-size: 1em;
+}
+
+    .btn-skills:hover, .btn-skills:focus {
+        outline: none;
+    }
+
+.slide-effect {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.btn-skills {
+    overflow: hidden;
+    margin: 0 15px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+    .btn-skills span {
+        display: block;
+        padding: 10px 20px;
+        background-color: #3B404D;
+        -webkit-transition: -webkit-transform 0.3s;
+        -moz-transition: -moz-transform 0.3s;
+        transition: transform 0.3s;
+    }
+
+    .btn-skills::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        padding: 10px 0;
+        width: 100%;
+        height: 100%;
+        content: attr(data-hover);
+        -webkit-transition: -webkit-transform 0.3s;
+        -moz-transition: -moz-transform 0.3s;
+        transition: transform 0.3s;
+        -webkit-transform: translateY(-25%);
+    }
+
+    .btn-skills:hover span, .btn-skills:focus span, .btn-skills.active span {
+        -webkit-transform: translateY(100%);
+        -moz-transform: translateY(100%);
+        transform: translateY(100%);
+    }
+
+    .btn-skills:hover::before, .btn-skills:focus::before, .btn-skills.active:before {
+        -webkit-transform: translateY(0%);
+        -moz-transform: translateY(0%);
+        transform: translateY(0%);
+    }
+
+.skills-pink {
+    border-left: 4px #f3377a solid;
+}
+
+.skills-green {
+    border-left: 4px #A5DA26 solid;
+}
+
+.skills-blue {
+    border-left: 4px #1b7ee4 solid;
+}
+
+.skills-orange {
+    border-left: 4px #db8918 solid;
+}
+
+.btn-skills.skills-blue::before {
+    background-color: #1b7ee4 !important;
+}
+
+.btn-skills.skills-pink::before {
+    background-color: #f3377a;
+}
+
+.btn-skills.skills-green::before {
+    background-color: #a5da26;
+}
+
+.btn-skills.skills-orange::before {
+    background-color: #db8918;
+}
+
+#cycle {
+    position: relative;
+}
+#cycle i {
+    color: black;
+}

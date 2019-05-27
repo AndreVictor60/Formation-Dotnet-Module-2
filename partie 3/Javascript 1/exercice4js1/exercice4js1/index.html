@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Exercice_4</title>
+    <meta charset="UTF-8" />
+</head>
+<body>
+    <form>
+        <div><label for="lastname">Nom : </label><input type="text" name="lastname" id="lastname" /></div>
+        <div><label for="firstname">Prénom : </label><input type="text" name="firstname" id="firstname" /></div>
+        <div><label for="city">Ville : </label><input type="text" name="city" id="city" /></div>
+        <div><input type="submit" name="submit" id="submit" value="valider" onclick="info()" /></div>
+    </form>
+    <script>
+        // Création d'une fonction info
+        function info() {
+            // Déclaration des variables et récuperation des valeurs des inputs
+            var lastName = document.getElementById("lastname").value;
+            var firstName = document.getElementById("firstname").value;
+            var city = document.getElementById("city").value;
+            // Regex afin de vérifie les valeurs saisit par utilisateur
+            var regex = /^[A - Za-z]{1}[a-záàâäãåçéèêëíìîïñóòôöõúùûüýÿæœ]([-']{1}[A-Za-záàâäãåçéèêëíìîïñóòôöõúùûüýÿæœ ]*)$/;
+            // Vérifie les variables avec la regex
+            if (regex.test(lastName) == true && regex.test(firstName) == true && regex.testq<(city) == true) {
+                // Affichage des variables
+                alert("Nom : " + lastName + "\nPrénom : " + firstName + "\nVille : " + city);
+            } else {
+                // En cas d'erreur affichage d'une message
+                alert("Une erreur s'est produite, veuillez réessayer")
+            }
+        };
+    </script>
+</body>
+</html>

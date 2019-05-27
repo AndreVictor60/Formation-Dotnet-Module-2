@@ -1,0 +1,15 @@
+﻿.case{
+    height: 15px;
+    width: 15px;
+
+}
+.casea {
+    border: 1px solid black;
+}
+.inputLetter {
+    height: 10px;
+    width: 10px;
+}
+.text-center{
+    text-align:center;
+}
